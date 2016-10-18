@@ -1,0 +1,149 @@
+//exercise 4
+List all of the first names for AddressBook.name="Pharetra Ut Limited"
+
+mysql> select 
+    -> distinct firstName 
+    -> from Entry 
+    -> join AddressBook ab on ab.id = Entry.addressBookId
+    -> where ab.name = "Pharetra Ut Limited";
++-------------+
+| firstName   |
++-------------+
+| Zelenia     |
+| Abdul       |
+| Idola       |
+| Illana      |
+| Winifred    |
+| Buckminster |
+| Heidi       |
+| Nell        |
+| Ciara       |
+| Sylvia      |
+| Caryn       |
+| Dieter      |
+| Jamalia     |
+| Herrod      |
+| Unity       |
+| Pascale     |
+| Colton      |
+| Jamal       |
+| Abel        |
+| Zena        |
+| Prescott    |
+| Idona       |
+| Paloma      |
+| Neve        |
+| Kyla        |
+| Kimberley   |
+| Jillian     |
+| Addison     |
+| Jacqueline  |
+| Sasha       |
+| Lee         |
+| Salvador    |
+| Yoko        |
+| Stacy       |
+| Halee       |
+| Blythe      |
+| Tad         |
+| Haley       |
+| Lara        |
+| Summer      |
+| Latifah     |
+| Faith       |
+| Stacey      |
+| Jennifer    |
+| Fulton      |
+| Colin       |
+| Thane       |
+| Bo          |
+| Amena       |
+| Melanie     |
+| Driscoll    |
+| Gareth      |
+| Colt        |
+| Martha      |
+| Sierra      |
+| Nita        |
+| Celeste     |
+| Kathleen    |
+| Samuel      |
+| Aaron       |
+| Cheyenne    |
+| Brett       |
+| Rebekah     |
++-------------+
+63 rows in set (0.01 sec)
+
+
+mysql> select distinct firstName from Entry join AddressBook ab on ab.id = Entry.addressBookId where ab.name = "Pharetra Ut Limited"
+    -> order by firstName asc;
++-------------+
+| firstName   |
++-------------+
+| Aaron       |
+| Abdul       |
+| Abel        |
+| Addison     |
+| Amena       |
+| Blythe      |
+| Bo          |
+| Brett       |
+| Buckminster |
+| Caryn       |
+| Celeste     |
+| Cheyenne    |
+| Ciara       |
+| Colin       |
+| Colt        |
+| Colton      |
+| Dieter      |
+| Driscoll    |
+| Faith       |
+| Fulton      |
+| Gareth      |
+| Halee       |
+| Haley       |
+| Heidi       |
+| Herrod      |
+| Idola       |
+| Idona       |
+| Illana      |
+| Jacqueline  |
+| Jamal       |
+| Jamalia     |
+| Jennifer    |
+| Jillian     |
+| Kathleen    |
+| Kimberley   |
+| Kyla        |
+| Lara        |
+| Latifah     |
+| Lee         |
+| Martha      |
+| Melanie     |
+| Nell        |
+| Neve        |
+| Nita        |
+| Paloma      |
+| Pascale     |
+| Prescott    |
+| Rebekah     |
+| Salvador    |
+| Samuel      |
+| Sasha       |
+| Sierra      |
+| Stacey      |
+| Stacy       |
+| Summer      |
+| Sylvia      |
+| Tad         |
+| Thane       |
+| Unity       |
+| Winifred    |
+| Yoko        |
+| Zelenia     |
+| Zena        |
++-------------+
+63 rows in set (0.01 sec)
+
