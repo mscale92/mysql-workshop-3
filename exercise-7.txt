@@ -1,0 +1,33 @@
+//Exercise 7
+
+List all possible domain name values for ElectronicMail (email@domain.name)
+
+mysql> select distinct substring_index(substring_index(content, '@',- 1), '.', -1 ) as domain from ElectronicMail order by domain asc;
++--------+
+| domain |
++--------+
+| ca     |
+| com    |
+| edu    |
+| net    |
+| org    |
+| uk     |
++--------+
+6 rows in set (0.00 sec)
+
+    //domain name refers to .com, .ca etc
+    
+    //Since our content is a string, varchar, we can use a substring function to find 
+    //string values within it
+        //specifically the substring_index function
+        
+    //the substring_index function takes a string, a delimiter, and a count as its parameters
+        //string, the string from which the function will extract a substring
+        //delimiter, the barrier/marker/character that the function will find
+        //count, refers to the number of delimiters present
+            //if count is positive then it will take the substring to the left of the delimiter
+            //negative will go to the right
+    
+    //substring_index can use the substring from another substring_index function 
+        //to create two, or more, barriers
+        //obviously only two barriers if they have opposite counts, a + and a -
