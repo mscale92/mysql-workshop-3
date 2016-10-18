@@ -1,0 +1,72 @@
+//Exercise 9
+
+List all of the cities within the countries of Canada, Austria, Isle of Man, Ireland and Japan.
+
+mysql> select
+    -> distinct city
+    -> from Address
+    -> where country in ('Canada', 'Austria', 'Isle of Man', 'Ireland', 'Japan')
+    -> order by city asc;
++----------------+
+| city           |
++----------------+
+| ?slahiye       |
+| Abbeville      |
+| Alness         |
+| Anápolis       |
+| Angers         |
+| Assen          |
+| Baulers        |
+| Belfast        |
+| Berlin         |
+| Bodmin         |
+| Bozeman        |
+| Bremerhaven    |
+| Cagnes-sur-Mer |
+| Calmar         |
+| Cartago        |
+| Ceyhan         |
+| Chartres       |
+| Chestermere    |
+| Cork           |
+| Denderbelle    |
+| Dover          |
+| Dubbo          |
+| Edmundston     |
+| Galway         |
+| Hamburg        |
+| Hillsboro      |
+| Horsham        |
+| Houston        |
+| Jackson        |
+| Kailua         |
+| Kraków         |
+| Lasnigo        |
+| Mabompr?       |
+| Meridian       |
+| Milena         |
+| Moulins        |
+| Nagaon         |
+| Ogbomosho      |
+| Pabianice      |
+| Pietraroja     |
+| Pontevedra     |
+| Quesada        |
+| Raj Nandgaon   |
+| Rollegem       |
+| Rzeszów        |
+| San Francisco  |
+| San Vicente    |
+| Satara         |
+| Shimla         |
+| Siedlce        |
+| Springfield    |
+| Tauranga       |
+| Terneuzen      |
+| Tirrases       |
+| Vienna         |
+| Zwickau        |
++----------------+
+56 rows in set (0.00 sec)
+
+    //apparently San Francisco belongs to Canada now
