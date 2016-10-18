@@ -1,0 +1,32 @@
+//Exercise 10
+
+Transform all work emails into home emails and vice versa. BE CAREFUL ;)
+
+mysql> alter table ElectronicMail
+    -> modify type enum('home', 'work', 'other', 'home2');
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+    //Add another category to the type enum, keep all originals
+    
+mysql> update ElectronicMail
+    -> set type = 'home2'
+    -> where type = 'home';
+Query OK, 920 rows affected (0.01 sec)
+Rows matched: 920  Changed: 920  Warnings: 0
+
+    //change home to the new value home2
+    
+mysql> update ElectronicMail
+    -> set type = 'home'
+    -> where type = 'work';
+Query OK, 690 rows affected (0.01 sec)
+Rows matched: 690  Changed: 690  Warnings: 0
+
+mysql> update ElectronicMail
+    -> set type = 'work'
+    -> where type = 'home2';
+Query OK, 920 rows affected (0.01 sec)
+Rows matched: 920  Changed: 920  Warnings: 0
+
+    //now reverse the two values with the third variable present.
