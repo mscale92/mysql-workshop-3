@@ -1,3 +1,21 @@
 //exercise 5
 
 List all of the emails associated to AddressBook.id = 100
+
+
+mysql> select
+    -> distinct email
+    -> from Account
+    -> Join AddressBook ab on (ab.accountId = Account.id)
+    -> where ab.id = 100;
++----------------------------------+
+| email                            |
++----------------------------------+
+| dapibus.quam@interdumligulaeu.ca |
++----------------------------------+
+1 row in set (0.00 sec)
+
+    //Account has the email data, so we must select our email from there
+    //Join the two columns that Account and AB have in common,
+        //AB.accountId = Account.id
+    //Only show data where AB's id is equal to 100
